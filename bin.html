@@ -1,0 +1,60 @@
+elif self.username_entry1.get()=='Niyondiko Joffre':
+                    messagebox.showerror('ERROR','UserName Arleady Exists',parent=self.sgn_up_frame)
+                    return
+                 else:
+                    try:
+                       con=sqlite3.connect("school.db")
+                    except:
+                        messagebox.showerror('ERROR','Connected DataBase Failled ,Please Try Again')
+                        return
+                    try:
+                        mycursor= con.cursor()
+                        mycursor.execute('CREATE TABLE IF NOT EXISTS  userinfos(Id int auto_increment primary key,Name varchar(100),Mobile_Or_Email varchar(200),Password varchar(100),Sexe varchar (30),Date varchar (30),Province varchar(300),Commune varchar(300),Colline varchar(300))')
+                        mycursor.execute("INSERT INTO userinfos (Name,Mobile_Or_Email,Password,Sexe,Date,Province,Commune,Colline)",(username_entry1.get(),username_entry2.get(),password_entry1.get(),enter_sexe_entry.get(),select_date.get(),var_province.get(),var_commune.get(),var_colline.get()))
+                        con.commit()
+                    except:
+                        pass 
+
+
+
+
+
+
+                                        
+                        
+                            
+                        if k==1:
+                        break
+                l=1
+                while  self.username_entry.get()=='' and self.password_entry.get()=='Bujumbura+257':    
+                       if self.password_entry.get()=='Bujumbura+257':
+                           messagebox.showerror("ERROR","Please Enter Your Username")                       
+                       if l==1:
+                            break
+                m=1
+                while  self.username_entry.get()=='Niyondiko Joffre' and self.password_entry.get()=='': 
+                      if self.username_entry.get()=='Niyondiko Joffre':
+                           messagebox.showerror("ERROR","Please Enter Your Password")
+                      if m==1:
+                        break
+                n=1
+                while self.username_entry.get()=='' and self.password_entry.get()=='':  
+                           messagebox.showerror("ERROR","Please Fill Place Empty")
+                           if n==1:
+                               break
+                o=1
+                while self.username_entry.get()=='' and self.password_entry.get()!='Bujumbura+257': 
+                       if self.username_entry.get()=='' and self.password_entry.get()!='':
+                            messagebox.showerror("ERROR","Please Fill Place Empty")  
+                       if o==1:
+                           break 
+                p=1
+                while  self.username_entry.get()!='Niyondiko Joffre' and self.password_entry.get()=='': 
+                        if  self.username_entry.get()!='' and self.password_entry.get()=='':
+                            messagebox.showerror("ERROR","Please Fill Place Empty")  
+                        if p==1:
+                            break
+               
+                if i==1:
+                 break
+          
